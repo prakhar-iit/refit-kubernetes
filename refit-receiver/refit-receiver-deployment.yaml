@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: refit-receiver-deployment
+  labels:
+    app: refit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: refit-receiver
+  template:
+    metadata:
+      labels:
+        app: refit-receiver
+    spec:
+      containers:
+        - name: refit
+          image: 705922/refit-receiver
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+          - name: config-map-volume
+            mountPath: /refit/config
+      volumes:
+      - name: config-map-volume
+        configMap: 
+          name: refit-receiver-config
