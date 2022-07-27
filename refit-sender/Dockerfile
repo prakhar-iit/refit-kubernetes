@@ -1,10 +1,11 @@
 FROM ubuntu
 
 RUN apt-get update
-RUN apt-get install -y python3 python3-pip curl
-RUN pip3 install flask jproperties
+RUN apt-get install -y python3 python3-pip curl dnsutils
+RUN apt install dnsutils
+RUN pip3 install flask jproperties requests
 
-COPY sender.py /refit/sender.py 
+COPY sender.py /refit/sender.py
 
 WORKDIR /refit/
 

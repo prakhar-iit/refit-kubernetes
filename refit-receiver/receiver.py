@@ -7,10 +7,10 @@ app = Flask(__name__)
 propPath = '/refit/config/refit.properties'
 
 @app.route('/receiver', methods=['POST'])
-def chatter():
+def receiver():
 	requestPayload = json.loads(request.data)
-	print(requestPayload)
-	return 'Roger, I get it'
+	print(requestPayload.get("message"))
+	return 'I got it, roger'
 
 def loadProperties():
 	configProp = Properties()
@@ -20,5 +20,3 @@ def loadProperties():
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8080, debug=True)
-	#config = loadProperties()
-	#print(config.get("Average").data)

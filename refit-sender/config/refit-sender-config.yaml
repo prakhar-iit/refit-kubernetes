@@ -4,4 +4,4 @@ metadata:
   name: refit-sender-config
   namespace: default
 data:
-  Average: '1'
+  sender_avg_time: '0.1'

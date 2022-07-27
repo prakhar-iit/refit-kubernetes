@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: refit-sender-deployment
   labels:
-    app: refit
+    app: refit-sender
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: refit-sender
@@ -15,7 +15,7 @@ spec:
         app: refit-sender
     spec:
       containers:
-        - name: refit
+        - name: refit-sender
           image: 705922/refit-sender
           ports:
             - containerPort: 8080

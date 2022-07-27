@@ -4,4 +4,4 @@ metadata:
   name: refit-receiver-config
   namespace: default
 data:
-  Average: '1'
+  receiver_avg_time: '0.1'
