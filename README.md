@@ -90,6 +90,14 @@ kubectl apply -f refit-sender-deployment.yaml
 kubectl set image deployments/refit-receiver-deployment refit-receiver=705922/refit-receiver:3
 ```
 
+## Git Commands to check-in changes
+```bash
+git pull
+git add --all
+git commit -m "Update readme file"  
+git push -u origin master
+```
+
 ## Other Important Commands of kubernetes
 ```bash
 kubectl apply -f cdl-refit-deployment.yaml
