@@ -9,6 +9,8 @@ COPY sender.py /refit/sender.py
 
 WORKDIR /refit/
 
+ENV PYTHONUNBUFFERED=1
+
 EXPOSE 8080
 
 ENTRYPOINT ["python3", "sender.py"]

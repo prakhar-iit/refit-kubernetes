@@ -7,10 +7,11 @@ import threading
 
 app = Flask(__name__)
 
+#Sender Python Service
 propPath = "/refit/config/refit.properties"
 #propPath = "/Users/prakharrastogi/Desktop/project/refit.properties" #Need to change
 url = "http://refit-receiver-svc.default.svc.cluster.local:8080/receiver"
-#url = "http://localhost:8081/receiver" 
+#url = "http://localhost:8081/receiver"
 payload = {'message': 'Hello World!!'}
 send = False
 config = ''
@@ -40,6 +41,7 @@ def ping(avg_time):
 		print(response.text)
 		time.sleep(avg_time)
 
+#Method to load files from Config Maps and use the parameters
 def loadProperties():
 	configProp = Properties()
 	with open(propPath, 'rb') as config_file:
